@@ -690,7 +690,7 @@ header .navbar-brand img {
 }
 
 .navbar-nav .nav-link{
-    min-height: 75px;
+    min-height: 60px;
     text-align: left;
     display: flex;
     align-items: center;
@@ -1954,5 +1954,11 @@ header .navbar-brand img {
     }
     header .inner-header {
         padding: 15px 20px;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .nav-link {
+        width: 300px;
     }
 }
