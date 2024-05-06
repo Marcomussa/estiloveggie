@@ -35,6 +35,13 @@
 ===================================*/
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,800|Roboto:400,500,700|Raleway:400&display=swap');
 
+:root {
+    --verde: #7ccd4f;
+    --violeta: #d31777;
+    --celeste: #8adee2;
+    --amarillo: #f2e436;
+}
+
 html{
     scroll-behavior: smooth;
 }
@@ -67,7 +74,7 @@ body{
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #ec3737;
+    background: var(--violeta);
     width: 0;
     height: 25%;
 }
@@ -135,8 +142,9 @@ a:focus {color: inherit}
 
 .btn-main:hover {
     color: #ffffff;
-    border-color: #ec3737;
-    background-color:#ec3737;
+    border-color: var(--verde);
+    background-color:var(--verde);
+    color: black;
 }
 
 .btn-main-inverse{
@@ -175,8 +183,8 @@ a:focus {color: inherit}
 
 .btn-sec-inverse:hover {
     color: #23262d;
-    background-color:#fec107;
-    border: solid 1px #fec107;
+    background-color:var(--amarillo);
+    border: solid 1px var(--amarillo);
 }
 
 .position-relative{
@@ -266,7 +274,7 @@ a:focus {color: inherit}
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    background-color: #ec3737;
+    background-color: var(--verde);
     position: absolute;
     top: 0;
     bottom: 0;
@@ -276,17 +284,17 @@ a:focus {color: inherit}
 }
 
 .dot-3 {
-    background-color: #ec3737;
+    background-color: var(--verde);
     animation: dot-3-move 2s ease infinite, index 6s ease infinite;
 }
 
 .dot-2 {
-    background-color: #ec3737;
+    background-color: var(--verde);
     animation: dot-2-move 2s ease infinite, index 6s -4s ease infinite;
 }
 
 .dot-1 {
-    background-color: #ec3737;
+    background-color: var(--verde);
     animation: dot-1-move 2s ease infinite, index 6s -2s ease infinite;
 }
 
@@ -501,7 +509,7 @@ header .navbar-brand img {
     left: 0;
     top: 0;
     bottom: 0;
-    background-color: #ec3737   ;
+    background-color: var(--violeta);
     z-index: 2032;
     height: 100%;
     -webkit-transform: translate3d(-100%, 0, 0);
@@ -795,7 +803,7 @@ header .navbar-brand img {
     width: 750px;
     height: 520px;
     position: absolute;
-    background: #d43030;
+    background: var(--violeta);
     top: 50%;
     left: 50%;
     transform: translate(-38%, -94%);
@@ -835,8 +843,8 @@ header .navbar-brand img {
     transition: .5s ease;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-image: -webkit-gradient(linear, left top, right top, from(#fec107), color-stop(50%, #fec107), color-stop(50%, #ffffff));
-    background-image: linear-gradient(to right, #fec107, #fec107 50%, #ffffff 50%);
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--amarillo)), color-stop(50%, var(--amarillo)), color-stop(50%, #ffffff));
+    background-image: linear-gradient(to right, var(--amarillo), var(--amarillo) 50%, #ffffff 50%);
     background-size: 200% 100%;
     background-position: 100%;
 }
@@ -946,7 +954,7 @@ header .navbar-brand img {
     width: 750px;
     height: 580px;
     position: absolute;
-    background: #fec107;
+    background: var(--amarillo);
     top: 50%;
     left: 50%;
     transform: translate(-38%, -80%);
@@ -978,7 +986,7 @@ header .navbar-brand img {
 .testimonial-sec .user-detail .user-name{
     font-size: 24px;
     font-weight: bold;
-    color: #fec107;
+    color: var(--amarillo);
 }
 
 .testimonial-sec .user-detail .user-loc{
@@ -1026,8 +1034,8 @@ header .navbar-brand img {
 }
 
 .contact-sec .contact-inner{
-    background: #d43030;
-    border: solid 10px #d43030;
+    background: var(--violeta);
+    border: solid 5px rgba(156, 20, 90, 0.7);
     padding: 80px;
 }
 
@@ -1159,7 +1167,7 @@ header .navbar-brand img {
     right: 15px;
     border-radius: 50%;
     color: #202020;
-    background-color: #fec107;
+    background-color: var(--amarillo);
     z-index: 4;
     width: 40px;
     text-align: center;
