@@ -459,7 +459,7 @@ header .navbar-brand{
 }
 
 header .navbar-brand img {
-    max-width: 80px;
+    max-width: 200px
 }
 
 /*side open btn*/
@@ -1818,7 +1818,7 @@ header .navbar-brand img {
 
     /* Nav-Bar */
     header .navbar-brand img{
-        max-width: 70%;
+        max-width: 85%;
         margin: auto;
     }
     header .btn-main {
