@@ -2001,9 +2001,24 @@ header .navbar-brand img {
     }
 }
 
-@media only screen and (max-width: 400px){
+@media only screen and (max-width: 450px){
     .nav-link {
         width: 300px;
+    }
+    body > section.main > div > div > div.col-md-12 > p {
+        display: none
+    }
+    .contact-details {
+        display: none;
+    }
+    .contact-inner {
+        padding-top: 0px !important;
+    }
+    #testimonial-sec > div > div > div.col-12.col-lg-12.position-relative > div.row.padding-top.align-items-center {
+        padding-top: 150px !important;
+    }
+    .contact-sec {
+        padding-top: 0px !important;
     }
 }
 
