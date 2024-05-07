@@ -263,15 +263,15 @@
                         <form class="row contact-form wow fadeInUp" id="contact-form-data">
                             <div class="col-sm-12" id="result"></div>
                             <div class="col-12">
-                                <input type="text" name="userName" placeholder="Nombre y Apellido" class="form-control">
-                                <input type="text" name="userSubject" placeholder="Teléfono" class="form-control">
-                                <input type="email" name="userEmail" placeholder="Email" class="form-control">
-                                <textarea class="form-control" name="userMessage" rows="6" placeholder="Dèjanos tu mensaje"></textarea>
+                                <input type="text" name="userName" placeholder="Nombre y Apellido" class="form-control" id="name-form">
+                                <input type="text" name="userSubject" placeholder="Teléfono" class="form-control" id="phone-form">
+                                <input type="email" name="userEmail" placeholder="Email" class="form-control" id="email-form">
+                                <textarea class="form-control" name="userMessage" rows="6" placeholder="Dèjanos tu mensaje" id="text-form"></textarea>
                             </div>
                             <div id="missingFields"></div>
                             <div class="g-recaptcha col-12" data-sitekey="6LdmgYgpAAAAAJmzd0xA7G5v7LrVc6ciEqCQVWNA"></div>
                             <div class="col-12 mt-4">
-                                <button type="submit" class="btn btn-sec-inverse rounded-pill w-100 contact_btn"><i class="fa fa-spinner fa-spin mr-2 d-none" aria-hidden="true"></i>Enviar</button>
+                                <button type="submit" id="submit-mainSection" class="btn btn-sec-inverse rounded-pill w-100 contact_btn"><i class="fa fa-spinner fa-spin mr-2 d-none" aria-hidden="true"></i>Enviar</button>
                             </div>
                         </form>
                     </div>
@@ -287,6 +287,7 @@
 <!-- End Scroll Top -->
 
 <!-- JavaScript -->
+<script src="/main-file/dark-agency/js/form.js"></script>
 <script src="vendor/js/bundle.min.js"></script>
 <!-- Plugin Js -->
 <script src="vendor/js/jquery.appear.js"></script>
@@ -294,7 +295,9 @@
 <script src="vendor/js/owl.carousel.min.js"></script>
 <script src="vendor/js/jquery.cubeportfolio.min.js"></script>
 <script src="vendor/js/wow.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
 
 <!-- CUSTOM JS -->
@@ -342,7 +345,7 @@
             const missingFieldsList = missingFields.map(function(field) {
                 return "<li>" + field + "</li>";
             }).join("");
-            missingFieldsElement.innerHTML = "<p>Por favor completa los siguientes campos:</p><ul>" + missingFieldsList + "</ul>";
+            missingFieldsElement.innerHTML = "<h5>Por favor, complete los siguientes campos:</h5><ul>" + missingFieldsList + "</ul>";
         } else {
             missingFieldsElement.innerHTML = ""; // Limpiar la lista si no faltan campos
         }

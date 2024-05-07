@@ -2030,3 +2030,18 @@ header .navbar-brand img {
     width: 100% !important;
     text-align: center;
 }
+
+#missingFields {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 15px;
+}
+
+#missingFields ul{
+    font-size: 16px;
+}
+
+#missingFields h5 {
+    font-weight: 600;
+    font-size: 26px;
+}
