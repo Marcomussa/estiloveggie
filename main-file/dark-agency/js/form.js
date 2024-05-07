@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 document.addEventListener("DOMContentLoaded", function() {
-    form.addEventListener("input", function(event) {
+    contactForm.addEventListener("input", function(event) {
         if (event.target.tagName === "INPUT" || event.target.tagName === "TEXTAREA") {
             if (event.target.value.trim() !== "") {
                 event.target.classList.remove("error");
@@ -100,13 +100,13 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    form.addEventListener("submit", function(event) {
+    contactForm.addEventListener("submit", function(event) {
         event.preventDefault(); // Evita el envío del formulario si hay campos vacíos
 
         let missingFields = [];
 
         // Validar cada campo
-        form.querySelectorAll("input, textarea").forEach(function(input) {
+        contactForm.querySelectorAll("input, textarea").forEach(function(input) {
             if (input.value.trim() === "") {
                 const placeholder = input.getAttribute("placeholder");
                 if (placeholder && placeholder.trim() !== "") {

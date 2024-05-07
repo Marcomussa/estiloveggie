@@ -2035,6 +2035,7 @@ header .navbar-brand img {
     color: white;
     font-family: 'Montserrat', sans-serif;
     padding-left: 15px;
+    margin-top: 10px;
 }
 
 #missingFields ul{
@@ -2045,3 +2046,12 @@ header .navbar-brand img {
     font-weight: 600;
     font-size: 26px;
 }
+
+.contact_btn, .btn-close {
+    transition: transform 0.3s ease; /* Agrega una transición suave al efecto */
+}
+
+.contact_btn:hover, .btn-close:hover {
+    transform: scale(0.9); /* Achica el elemento al 90% de su tamaño original */
+}
+

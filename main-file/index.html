@@ -264,7 +264,7 @@
                             <div class="col-sm-12" id="result"></div>
                             <div class="col-12">
                                 <input type="text" name="userName" placeholder="Nombre y Apellido" class="form-control" id="name-form">
-                                <input type="text" name="userSubject" placeholder="Teléfono" class="form-control" id="phone-form">
+                                <input type="text" name="userSubject" placeholder="Teléfono" class="form-control" id="phone-form" maxlength="20">
                                 <input type="email" name="userEmail" placeholder="Email" class="form-control" id="email-form">
                                 <textarea class="form-control" name="userMessage" rows="6" placeholder="Dèjanos tu mensaje" id="text-form"></textarea>
                             </div>
@@ -304,67 +304,3 @@
 <script src="dark-agency/js/script.js"></script>
 </body>
 </html>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById("contact-form-data");
-    const missingFieldsElement = document.getElementById("missingFields");
-
-    form.addEventListener("input", function(event) {
-        if (event.target.tagName === "INPUT" || event.target.tagName === "TEXTAREA") {
-            if (event.target.value.trim() !== "") {
-                event.target.classList.remove("error");
-                event.target.classList.add("completed");
-            } else {
-                event.target.classList.remove("completed");
-                event.target.classList.add("error");
-            }
-            // Cambiar el borde a verde
-            event.target.style.borderColor = "#28a745";
-        }
-    });
-
-    form.addEventListener("submit", function(event) {
-        event.preventDefault(); // Evita el envío del formulario si hay campos vacíos
-
-        let missingFields = [];
-
-        // Validar cada campo
-        form.querySelectorAll("input, textarea").forEach(function(input) {
-            if (input.value.trim() === "") {
-                const placeholder = input.getAttribute("placeholder");
-                if (placeholder && placeholder.trim() !== "") {
-                    missingFields.push(placeholder);
-                }
-                input.classList.add("error");
-            }
-        });
-
-        // Mostrar lista de campos faltantes
-        if (missingFields.length > 0) {
-            const missingFieldsList = missingFields.map(function(field) {
-                return "<li>" + field + "</li>";
-            }).join("");
-            missingFieldsElement.innerHTML = "<h5>Por favor, complete los siguientes campos:</h5><ul>" + missingFieldsList + "</ul>";
-        } else {
-            missingFieldsElement.innerHTML = ""; // Limpiar la lista si no faltan campos
-        }
-    });
-});
-
-</script>
-
-<style>
-    .contact_btn, .btn-close {
-        transition: transform 0.3s ease; /* Agrega una transición suave al efecto */
-    }
-
-    .contact_btn:hover, .btn-close:hover {
-        transform: scale(0.9); /* Achica el elemento al 90% de su tamaño original */
-    }
-    
-#missingFields {
-        margin-top: 10px;
-    
-    }
-</style>
