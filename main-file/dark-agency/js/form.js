@@ -60,6 +60,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
           submitBTN.innerText = "Enviado!";
           submitBTN.setAttribute("data-text", "Enviado!");
+
+            nameForm.value = "";
+            email.value = "";
+            phone.value = "";
+            message.value = "";
+            grecaptcha.reset();
         },
         function (err) {
           submitBTN.innerText = "Error";
