@@ -11,6 +11,14 @@ const templateID = "template_fz54hvj"
 
 document.addEventListener("DOMContentLoaded", () => {
     emailjs.init("6YGFooyyIV4DRl-ai");
+
+    contactForm.addEventListener("input", function(event) {
+        if (event.target.tagName === "INPUT" || event.target.tagName === "TEXTAREA") {
+            event.target.style.borderColor = "#28a745";
+        }
+    });
+
+    
     contactForm.addEventListener('submit', function(event) {
         event.preventDefault()
 
@@ -88,14 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", function() {
     contactForm.addEventListener("input", function(event) {
         if (event.target.tagName === "INPUT" || event.target.tagName === "TEXTAREA") {
-            if (event.target.value.trim() !== "") {
-                event.target.classList.remove("error");
-                event.target.classList.add("completed");
-            } else {
-                event.target.classList.remove("completed");
-                event.target.classList.add("error");
-            }
-            // Cambiar el borde a verde
             event.target.style.borderColor = "#28a745";
         }
     });
