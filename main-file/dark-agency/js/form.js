@@ -9,7 +9,8 @@ const missingFieldsElement = document.getElementById("missingFields");
 const serviceID = "service_vnqfvhm"
 const templateID = "template_fz54hvj"
 
-document.addEventListener("DOMContentLoaded", () => {
+
+document.addEventListener("DOMContentLoaded", function() {
     emailjs.init("6YGFooyyIV4DRl-ai");
 
     contactForm.addEventListener("input", function(event) {
@@ -18,11 +19,31 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    
-    contactForm.addEventListener('submit', function(event) {
-        event.preventDefault()
+    contactForm.addEventListener("submit", function(event) {
+        event.preventDefault(); // Evita el envío del formulario si hay campos vacíos
 
-        var response = grecaptcha.getResponse();
+        let missingFields = [];
+
+        // Validar cada campo
+        contactForm.querySelectorAll("input, textarea").forEach(function(input) {
+            if (input.value.trim() === "") {
+                const placeholder = input.getAttribute("placeholder");
+                if (placeholder && placeholder.trim() !== "") {
+                    missingFields.push(placeholder);
+                }
+                input.classList.add("error");
+            }
+        });
+
+        // Mostrar lista de campos faltantes
+        if (missingFields.length > 0) {
+            const missingFieldsList = missingFields.map(function(field) {
+                return "<li>" + field + "</li>";
+            }).join("");
+            missingFieldsElement.innerHTML = "<h5>Por favor, complete los siguientes campos:</h5><ul>" + missingFieldsList + "</ul>";
+        } else {
+            missingFieldsElement.innerHTML = ""; // Limpiar la lista si no faltan campos
+            var response = grecaptcha.getResponse();
         if (response.length === 0) {
             let timerInterval;
             Swal.fire({
@@ -90,40 +111,6 @@ document.addEventListener("DOMContentLoaded", () => {
             
         }
 
-    });
-})
-
-document.addEventListener("DOMContentLoaded", function() {
-    contactForm.addEventListener("input", function(event) {
-        if (event.target.tagName === "INPUT" || event.target.tagName === "TEXTAREA") {
-            event.target.style.borderColor = "#28a745";
-        }
-    });
-
-    contactForm.addEventListener("submit", function(event) {
-        event.preventDefault(); // Evita el envío del formulario si hay campos vacíos
-
-        let missingFields = [];
-
-        // Validar cada campo
-        contactForm.querySelectorAll("input, textarea").forEach(function(input) {
-            if (input.value.trim() === "") {
-                const placeholder = input.getAttribute("placeholder");
-                if (placeholder && placeholder.trim() !== "") {
-                    missingFields.push(placeholder);
-                }
-                input.classList.add("error");
-            }
-        });
-
-        // Mostrar lista de campos faltantes
-        if (missingFields.length > 0) {
-            const missingFieldsList = missingFields.map(function(field) {
-                return "<li>" + field + "</li>";
-            }).join("");
-            missingFieldsElement.innerHTML = "<h5>Por favor, complete los siguientes campos:</h5><ul>" + missingFieldsList + "</ul>";
-        } else {
-            missingFieldsElement.innerHTML = ""; // Limpiar la lista si no faltan campos
         }
     });
 });
