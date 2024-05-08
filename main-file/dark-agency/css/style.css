@@ -2020,6 +2020,9 @@ header .navbar-brand img {
     .contact-sec {
         padding-top: 0px !important;
     }
+    .slider-img {
+        height: 235px !important;
+    }
 }
 
 .text-quote {
